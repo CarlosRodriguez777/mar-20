@@ -6,49 +6,27 @@
 </head>
 
 <body>
+    
+  <h2>📐 Triángulo</h2>
+  <div>
+    A: <input id="x1" type="number" value="5"> <input id="y1" type="number" value="5"> | 
+    B: <input id="x2" type="number" value="15"> <input id="y2" type="number" value="5"> | 
+    C: <input id="x3" type="number" value="10"> <input id="y3" type="number" value="15">
+  </div><br>
+  
+  <div>
+    Algoritmo: <select id="method"><option value="dda">DDA</option><option value="bresenham">Bresenham</option></select>
+    Zoom: <input id="zoom" type="range" min="10" max="50" value="20" oninput="zoom()">
+    Grosor: <input id="size" type="number" value="3" style="width:40px">
+  </div><br>
 
-    <h2>Triángulo en plano cartesiano (X,Y positivos)</h2>
+  <button onclick="procesar()">Dibujar</button>
+  <button onclick="clearCanvas()">Limpiar</button>
+  <span id="mensaje"></span><br><br>
 
-    Punto 1:
-    <input id="x1" type="number">
-    <input id="y1" type="number">
+  <canvas id="canvas" width="500" height="500" style="border:3px solid #000"></canvas>
 
-    <br><br>
-
-    Punto 2:
-    <input id="x2" type="number">
-    <input id="y2" type="number">
-
-    <br><br>
-
-    Punto 3:
-    <input id="x3" type="number">
-    <input id="y3" type="number">
-
-    <br><br>
-
-    Algoritmo:
-    <select id="method">
-        <option value="dda">DDA</option>
-        <option value="bresenham">Bresenham</option>
-    </select>
-
-    Grosor:
-    <input id="size" type="number" value="3">
-
-    <br><br>
-
-    <button onclick="procesar()">Verificar y Dibujar</button>
-    <button onclick="clearCanvas()">Limpiar</button>
-
-    Zoom:
-    <input id="zoom" type="range" min="10" max="50" value="20" oninput="zoom()">
-
-    <p id="mensaje"></p>
-
-    <canvas id="canvas" width="500" height="500" style="border:1px solid black"></canvas>
-
-    <script src="6000748_V1.JS"></script>
+  <script src="6000748_V1.JS"></script>
 
 </body>
 
