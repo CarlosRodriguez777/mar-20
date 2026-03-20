@@ -4,7 +4,9 @@ let canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d"), s
 const drawP = (x, y, sz, c = "black") => { ctx.fillStyle = c; ctx.fillRect(x - sz / 2, y - sz / 2, sz, sz); };
 
 function drawGrid() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
     for (let i = 0; i <= canvas.width; i += scale) {
         ctx.strokeStyle = "#ddd";
         ctx.strokeRect(i, 0, 0.1, canvas.height); // Líneas verticales
@@ -51,6 +53,15 @@ function procesar() {
             ctx.fillText(`${String.fromCharCode(65 + i)} (${pts[i * 2]},${pts[i * 2 + 1]})`, cx + 5, cy - 5);
         }
     } else document.getElementById("mensaje").innerText = "NO se forma un triángulo";
+    if (drawLine(x1,x2,y1,y2,x3,y3)){
+
+        let lado1 = dist(x1, y1, x2, y2)
+        let lado2 = dist(x2, y2, x3, y3) 
+        let lado3 = dist(x3, y3, x1, y1) 
+        
+        let tipo = obtenerTipo(lado1,lado2,lado3)
+        document.getElementById("mensaje").innerText = `El tipo de triángulo es ${tipo}!`;
+    }
 }
 
 function zoom() {
@@ -68,6 +79,16 @@ function descargar(){
     link.href = canvas.toDataURL()
     link.click()
 
+}
+// Calcula la distancia entre dos puntos (Longitud del lado)
+const dist = (x1, y1, x2, y2) => Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+
+function obtenerTipo(a,b,c){
+
+       a = a.toFixed(2), b = b.toFixed(2), c = c.toFixed(2)
+       if(a === b && b === c) return "Equilatero"
+       if(a === b || b === c || a === c) return "Isoseles"
+       return "Escaleno"
 }
 
 const clearCanvas = () => { document.getElementById("mensaje").innerText = ""; drawGrid(); };
