@@ -61,5 +61,14 @@ function zoom() {
     procesar(drawGrid)
 }
 
+function descargar(){
+
+    let link = document.createElement("a")
+    link.download = "triangulo.png"
+    link.href = canvas.toDataURL()
+    link.click()
+
+}
+
 const clearCanvas = () => { document.getElementById("mensaje").innerText = ""; drawGrid(); };
 drawGrid();
