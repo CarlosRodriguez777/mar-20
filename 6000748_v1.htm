@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Triángulo en plano positivo</title>
+    <title>Triángulo en plano positivo</title>
 </head>
 
 <body>
 
-<h2>Triángulo en plano cartesiano (X,Y positivos)</h2>
+    <h2>Triángulo en plano cartesiano (X,Y positivos)</h2>
 
-Punto 1:
-<input id="x1" type="number">
-<input id="y1" type="number">
+    Punto 1:
+    <input id="x1" type="number">
+    <input id="y1" type="number">
 
-<br><br>
+    <br><br>
 
-Punto 2:
-<input id="x2" type="number">
-<input id="y2" type="number">
+    Punto 2:
+    <input id="x2" type="number">
+    <input id="y2" type="number">
 
-<br><br>
+    <br><br>
 
-Punto 3:
-<input id="x3" type="number">
-<input id="y3" type="number">
+    Punto 3:
+    <input id="x3" type="number">
+    <input id="y3" type="number">
 
-<br><br>
+    <br><br>
 
-Algoritmo:
-<select id="method">
-<option value="dda">DDA</option>
-<option value="bresenham">Bresenham</option>
-</select>
+    Algoritmo:
+    <select id="method">
+        <option value="dda">DDA</option>
+        <option value="bresenham">Bresenham</option>
+    </select>
 
-Grosor:
-<input id="size" type="number" value="3">
+    Grosor:
+    <input id="size" type="number" value="3">
 
-<br><br>
+    <br><br>
 
-<button onclick="procesar()">Verificar y Dibujar</button>
-<button onclick="clearCanvas()">Limpiar</button>
+    <button onclick="procesar()">Verificar y Dibujar</button>
+    <button onclick="clearCanvas()">Limpiar</button>
 
-<p id="mensaje"></p>
+    <p id="mensaje"></p>
 
-<canvas id="canvas" width="500" height="500" style="border:1px solid black"></canvas>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid black"></canvas>
 
-<script src="6000748_V1.JS"></script>
+    <script src="6000748_V1.JS"></script>
 
 </body>
+
 </html>
