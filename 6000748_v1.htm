@@ -41,6 +41,9 @@
     <button onclick="procesar()">Verificar y Dibujar</button>
     <button onclick="clearCanvas()">Limpiar</button>
 
+    Zoom:
+    <input id="zoom" type="range" min="10" max="50" value="20" oninput="zoom()">
+
     <p id="mensaje"></p>
 
     <canvas id="canvas" width="500" height="500" style="border:1px solid black"></canvas>

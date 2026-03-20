@@ -53,5 +53,13 @@ function procesar() {
     } else document.getElementById("mensaje").innerText = "NO se forma un triángulo";
 }
 
+function zoom(){
+
+    let nuevoZoom = Number(document.getElementById("zoom").value)   
+    scale = nuevoZoom
+    document.getElementById("zoomVal").innerText = nuevoZoom;
+    procesar(drawGrid)
+}
+
 const clearCanvas = () => { document.getElementById("mensaje").innerText = ""; drawGrid(); };
 drawGrid();
